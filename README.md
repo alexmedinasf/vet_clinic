@@ -140,6 +140,17 @@ Clone this repository to your desired folder:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+
+- [ ] **[add "join table" for visits]**
+- [ ] **[database performance audit]**
+- [ ] **[query multiple tables]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
@@ -162,8 +173,6 @@ Feel free to check the [issues page](../../issues/).
 I would like to thank Microverse for the opportunity
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
 
 <!-- LICENSE -->
 
