@@ -87,8 +87,8 @@ select avg(weight_kg) from animals;
 
 --Who escapes the most, neutered or not neutered animals? --
 
-select count(escape_attempts) from animals
-group by neutered;
+SELECT neutered, SUM(escape_attempts) AS total_escape_attempts FROM animals
+GROUP BY neutered;
 
 --What is the minimum and maximum weight of each type of animal? -- 
 
