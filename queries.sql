@@ -24,6 +24,8 @@ WHERE weight_kg between 10.4 and 17.3;
 
 -- changing the species 
 
+begin;
+
 update animals
 set species = 'digimon'
 where name like '%mon';
@@ -31,6 +33,12 @@ where name like '%mon';
 update animals
 set species = 'pokemon'
 where species is null;
+
+select species from animals;
+
+commit;
+
+select species from animals;
 
 -- deleting animals and rollback
 
