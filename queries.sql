@@ -117,3 +117,12 @@ rollback;
 
 select * from animals;
 
+-- Create a table named owners --
+
+create table owners (
+	id serial primary key,
+	full_name varchar(255),
+	age integer
+);
+
+-- 
