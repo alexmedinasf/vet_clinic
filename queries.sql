@@ -48,6 +48,8 @@ delete from animals;
 
 rollback;
 
+select * from animals;
+
 -- deleting animals with a specific date of birth + using savepoints-- 
 
 begin;
