@@ -125,4 +125,11 @@ create table owners (
 	age integer
 );
 
--- 
+-- Create a table named species -- 
+
+create table species(
+	id serial primary key,
+	name varchar(255)
+);
+
+--
