@@ -92,3 +92,16 @@ where date_of_birth between '1990-01-01' and '2000-12-31'
 group by species;
 
 
+-- Inside a transaction update the animals table by setting the species column to unspecified. Verify that change was made. Then roll back the change and verify that the species columns went back to the state before the transaction.--
+
+begin;
+
+UPDATE animals
+SET species = 'unspecified';
+
+select * from animals;
+
+rollback; 
+
+select * from animals;
+
