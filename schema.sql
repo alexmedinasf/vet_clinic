@@ -18,3 +18,31 @@ TABLESPACE pg_default;
 
 ALTER TABLE IF EXISTS public.animals
     OWNER to postgres;
+
+    -- Create a table named owners --
+
+create table owners (
+	id serial primary key,
+	full_name varchar(255),
+	age integer
+);
+
+-- Create a table named species -- 
+
+create table species(
+	id serial primary key,
+	name varchar(255)
+);
+
+--Modify animals table--
+
+alter table animals
+drop column species;
+
+alter table animals
+add column species_id int references species(id);
+
+select * from animals;
+
+alter table animals
+add column owner_id int references owners(id);
