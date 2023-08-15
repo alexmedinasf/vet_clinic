@@ -21,3 +21,45 @@ WHERE name != 'Gabumon';
 
 SELECT * FROM animals
 WHERE weight_kg between 10.4 and 17.3;
+
+-- changing the species 
+
+update animals
+set species = 'digimon'
+where name like '%mon';
+
+update animals
+set species = 'pokemon'
+where species is null;
+
+-- deleting animals and rollback
+
+begin;
+
+delete from animals;
+
+rollback;
+
+-- deleting animals with a specific date of birth + using savepoints-- 
+
+begin;
+
+delete from animals
+where date_of_birth > '2022-01-01';
+
+savepoint savepoins_1;
+
+update animals
+set weight_kg = weight_kg * -1;
+
+rollback to savepoins_1;
+
+-- updating animals weight -- 
+
+update animals
+set weight_kg = weight_kg * -1
+where weight_kg < 1;
+
+commit;
+
+--
