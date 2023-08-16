@@ -42,3 +42,53 @@ INSERT INTO public.animals(
 	name, date_of_birth, escape_attempts, neutered, weight_kg)
 	VALUES ('Ditto', '2022-05-14', '4', '1', '22');
 
+-- Insert the following data into the owners table: -- 
+
+insert into owners (full_name, age)
+values ('Sam Smith', 34),
+	   ('Jennifer Orwell', 19),
+	   ('Bob', 45),
+	   ('Melody Pond', 77),
+	   ('Dean Winchester', 14),
+	   ('Jodie Whittaker', 38);
+	  
+
+-- Insert the following data into the species table -- 
+
+insert into species (name)
+values ('Pokemon'),
+	  ('Digimon');
+
+-- Modify your inserted animals so it includes the species_id value -- 
+
+update animals
+set species_id = (select id from species where name = 'Digimon')
+where name like '%mon';
+
+update animals
+set species_id = (select id from species where name = 'Pokemon')
+where name not like '%mon';
+
+-- Modify your inserted animals to include owner information (owner_id) --
+
+update animals
+set owner_id = (select id from owners where full_name = 'Sam Smith')
+where name = 'Agumon';
+
+update animals
+set owner_id = (select id from owners where full_name = 'Jennifer Orwell')
+where name in  ('Gabumon','Pikachu');
+
+update animals
+set owner_id = (select id from owners where full_name = 'Bob')
+where name in  ('Devimon','Plantmon');
+
+update animals
+set owner_id = (select id from owners where full_name = 'Melody Pond')
+where name in  ('Charmander','Squirtle', 'Blossom');
+
+update animals
+set owner_id = (select id from owners where full_name = 'Dean Winchester')
+where name in  ('Angemon','Boarmon');
+
+--
