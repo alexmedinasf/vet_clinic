@@ -91,6 +91,14 @@ update animals
 set owner_id = (select id from owners where full_name = 'Dean Winchester')
 where name in  ('Angemon','Boarmon');
 
+--Insert the following data for vets --
+
+insert into vets (name, age, date_of_graduation)
+values ('William Tatcher', '45', '2000-04-23'),
+	   ('Maisy Smithr', '26', '2019-01-17'),
+	   ('Stephanie Mendez', '64', '1981-05-04'),
+	   ('Jack Harkness', '38', '2008-06-08');
+
 -- Insert the following data for specializations:--
 --Vet William Tatcher is specialized in Pokemon.--
 
