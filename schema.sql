@@ -46,3 +46,31 @@ select * from animals;
 
 alter table animals
 add column owner_id int references owners(id);
+
+-- Create a table named vets --
+
+create table vets (
+	id serial primary key,
+	name varchar(255),
+	age int,
+	date_of_graduation date
+);
+
+-- ceate a "join table" called specializations --
+
+create table specialization (
+	species_id integer references species(id),
+	vets_id integer references vets(id),
+	primary key (vets_id, species_id)
+);
+
+--  Create a "join table" called visits --
+
+create table visits (
+	vets_id integer references vets(id),
+	animals_id integer references animals(id),
+	visit_date date,
+	primary key (vets_id, animals_id, visit_date)
+);
+
+
